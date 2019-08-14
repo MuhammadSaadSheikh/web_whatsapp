@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What's App </title>
+    <link rel="shortcut icon" href="../img/title1.png" width="200%">
+    <link rel="stylesheet" href="../css/signUp.css">
+    <link rel="stylesheet" href="../css/index.css">
+
+</head>
+
+<body>
+    <div class="topHeader">
+        <div class="detailWrapper">
+            <img src="../img/icon.png" width="10%" alt="icon" class="logo" />
+        </div>
+    </div>
+    <div class="formDiv">
+        <h2>Sign Up</h2>
+        <input type="file" onfocus="changeInput('txtFileName',true)" onblur="changeInput('txtFileName',false)"
+            id="txtFileName" required>
+        <input type="text" onfocus="changeInput('firstName',true)" onblur="changeInput('firstName',false)"
+            placeholder="First Name" id="firstName" required>
+        <input type="text" onfocus="changeInput('lastName',true)" onblur="changeInput('lastName',false)"
+            placeholder="Last Name" id="lastName" required>
+        <input type="text" onfocus="changeInput('userName',true)" onblur="changeInput('userName',false)"
+            placeholder="User Name" id="userName" required>
+        <input type="email" onfocus="changeInput('userEmail',true)" onblur="changeInput('userEmail',false)"
+            id="userEmail" placeholder="abc@gmail.com" required>
+        <input type="number" onfocus="changeInput('userNumber',true)" onblur="changeInput('userNumber',false)"
+            placeholder="03127539514" id="userNumber" required>
+        <input type="password" onfocus="changeInput('createPassword',true)" onblur="changeInput('createPassword',false)"
+            id="createPassword" placeholder="Password" required>
+        <input type="password" onfocus="changeInput('confirmPasswrod',true)"
+            onblur="changeInput('confirmPasswrod',false)" id="confirmPasswrod" placeholder="Confirm Password" required>
+
+        <button id="btn1" onclick="signUp()">SignUp</button>
+        <img id="loader" src="../img/loader.gif" width="100px;" style="display: none">
+        <button id="btn2" onclick="signIn()"> SignIn</button>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script src="../js/signUp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What's App</title>
+    <link rel="shortcut icon" href="../img/title1.png">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/forget.css">
+    <link rel="stylesheet" href="../css/addUser.css">
+</head>
+<body>
+        <div class="topHeader">
+                <div class="detailWrapper">
+                  <img src="../img/icon.png" width="10%" alt="icon" class="logo" />
+                </div>
+        </div>
+        <div class="formDiv" id="numberContanier">
+                <h2 id="head1">Add Number</h2>
+                <input type="number" id="addNumber" placeholder="Enter Number" required onfocus="changeInput('addNumber',true)" onblur="changeInput('addNumber',false)" >
+                <button id="btn1" onclick="addNumber()">Add</button>
+                <img id="loaderNumber" src="../img/loader.gif" width="100px;" style="display: none">
+            </div>
+            <div class="profile" id="profileWrapper">
+                <div class="childProfile">
+
+                    <h1>Profile</h1>
+                    <div class="profileImageWrapper">
+                        <img src="../img/loader.gif" id="avatar" alt="" class='pic'>
+                    </div>
+                    <p class="elements" id="txtFullName">First name</p>
+                    <p class="elements" id="txtUsername">User Name</p>
+                    <p class="elements" id="txtEmail">Email</p>
+                    <p class="elements" id="txtNumber">Number</p>
+                    <button id="btnChat" class="chatButton">Chat</button>
+                <img id="loader" src="../img/loader.gif" width="100px;" style="display: none">
+                </div>
+                </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+<script src="../js/addUser.js"></script>
+</html>

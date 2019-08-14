@@ -1,0 +1,223 @@
+body {
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgb(17, 191, 176);
+}
+.moreInfo {
+  margin-left: 45%;
+  margin-top: 2%;
+  /* width: 50%; */
+}
+.links {
+  width: 1090%;
+  background-color: red;
+  height: 20px;
+  border: 2px solid black;
+}
+
+.headerChild {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 180%;
+}
+.moreInfo {
+  width: 50%;
+  height: 100%;
+  background-color: red;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px; */
+}
+
+.usersDiv {
+  width: 30.2%;
+  /* background-color: black; */
+  height: auto;
+  text-align: center;
+  border: 1px solid green;
+  /* padding-right: 2% */
+}
+.chatsDiv {
+  width: 69.5%;
+  text-align: center;
+  /* background-color: rgb(209, 68, 68); */
+  border: 1px solid green;
+  height: auto;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* float: left; */
+  flex-direction: column;
+}
+
+/*main css*/
+.topHeader {
+  width: 100%;
+  height: 100px;
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(17, 191, 176);
+  position: relative;
+}
+
+.detailWrapper {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.dropdownWrapper {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.profileImageWrapper {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #000;
+  border-radius: 100px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+}
+
+.dropdown {
+  width: 100px;
+  height: 120px;
+  /* background-color: red; */
+  position: absolute;
+  top: 83px;
+  right: 80px;
+  border-radius: 10px;
+  /* display: none; */
+  /* border: 2px solid darkgreen; */
+  flex-direction: column;
+}
+.crosswrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.closedropdown {
+  cursor: pointer;
+  outline: none;
+  width: 30%;
+  border-radius: 100px;
+  height: 25px;
+  border: none;
+  background-color: red;
+  color: white;
+  transition: 0.5s;
+  font-weight: bold;
+  font-size: 10px;
+}
+.closedropdown:hover{
+  width: 35%;
+  font-size: 12px;
+  height: 27px;
+  font-weight: bold;
+  background-color: darkred;
+  transition: 0.5s
+}
+
+.btn1,
+.btn2,
+.btn3 {
+  cursor: pointer;
+  width: 90%;
+  height: 30px;
+  border: none;
+  background-color: green;
+  color: white;
+  margin: 1%;
+  border-radius: 20px;
+  outline: none;
+  transition: 0.5s;
+}
+
+.btn1:hover,
+.btn2:hover,
+.btn3:hover{
+  background-color: darkgreen;
+  font-weight: bold;
+  width: 92%;
+  transition: 0.5s;
+  height: 35px;
+}
+
+.tabsContainer{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabs{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #000;
+  font-weight: bold;
+  transition: 2s;
+}
+
+.animatedBorder{
+  width: 50%;
+  height: 4px;
+  background: #000;
+  position: relative;
+  transition: 1s;
+  margin-left: -50%;
+}
+
+.chatsDetailContainer{
+  width: 100%;
+  height: 84vh;
+  background-color: red;
+}
+
+.contactsDetailContainer{
+  width: 100%;
+  height: 84vh;
+  background-color: blue;
+  display: none;
+}

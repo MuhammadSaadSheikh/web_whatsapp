@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What's App</title>
+    <link rel="stylesheet" href="../css/signIn.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" href="../img/title1.png">
+
+</head>
+
+<body>
+    <div class="topHeader">
+        <div class="detailWrapper">
+          <img src="../img/icon.png" width="10%" alt="icon" class="logo" />
+        </div>
+    </div>
+    <div class="formDiv">
+        <h2 id="head1">Sign In</h2>
+        <input type="email" name="" id="userEmail" placeholder="abc@gmail.com" onfocus="changeInput('userEmail',true)" onblur="changeInput('userEmail',false)"  required>
+        <input type="password" name="" id="createPassword" placeholder="Password" onfocus="changeInput('createPassword',true)" onblur="changeInput('createPassword',false)" required>
+        <button id="btn2" onclick="signIn()"> SignIn</button>
+        <img id="loader" src="../img/loader.gif" width="100px;" style="display: none">
+        <button id="btn1" onclick="signUp()">SignUp</button>
+        <button id="btn3" onclick="forgetPass()">Forget Password</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script src="../js/signIn.js"></script>
+</body>
+
+</html>

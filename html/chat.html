@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>What's App</title>
+    <link rel="shortcut icon" href="../img/title1.png" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/chat.css" />
+  </head>
+
+  <body>
+    <div class="topHeader">
+      <div class="detailWrapper">
+        <img src="../img/icon.png" width="10%" alt="icon" class="logo" />
+        <h1 id="userName">loading...</h1>
+      </div>
+      <div class="dropdownWrapper">
+        <div class="profileImageWrapper" onclick="dropDown()">
+          <img src="../img/icon.png" class="profileImage" id="myProfile" />
+        </div>
+      </div>
+      <div class="dropdown" style="display: none" id="dropdown">
+        <div class="crosswrapper">
+          <button onclick="closeDropdowon()" class="closedropdown">X</button>
+        </div>
+        <!-- <button onclick="addUser()" class="btn1">Add User</button> -->
+        <button onclick="updateProfile()" class="btn2">Profile</button>
+        <button onclick="signOut()" class="btn3">SignOut</button>
+      </div>
+    </div>
+    <div class="chatBoxContainer">
+      <div class="chatBox" id="mainContainer">
+
+      </div>
+      <div class="inputContainer">
+        <input
+          type="text"
+          class="chatInput"
+          placeholder="Type Your Message"
+          id="txtMessage"
+        />
+        <button class="send" onclick="send()">Send</button>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script src="../js/chat.js"></script>
+  </body>
+</html>

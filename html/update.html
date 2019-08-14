@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What's App</title>
+    <link rel="shortcut icon" href="../img/title.png.jfif">
+    <link rel="stylesheet" href="../css/signUp.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div class="topHeader">
+        <div class="detailWrapper">
+            <img src="../img/icon.png" width="10%" alt="icon" class="logo" />
+            <h1 id="userName">loading...</h1>
+        </div>
+        <div class="dropdownWrapper">
+            <div class="profileImageWrapper" onclick="dropDown()">
+                <img src="../img/icon.png" class="profileImage" />
+            </div>
+        </div>
+        <div class="dropdown" style="display: none" id="dropdown">
+            <div class="crosswrapper">
+                <button onclick="closeDropdowon()" class='closedropdown'>X</button>
+            </div>
+            <button onclick="addUser()" class="btn1">Add User</button>
+            <button onclick="updateProfile()" class="btn2">Profile</button>
+            <button onclick="signOut()" class="btn3">SignOut</button>
+        </div>
+    </div>
+    <div class="formDiv">
+        <h2>Profile Updata</h2>
+        <input type="file" name="" id="">
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        <input type="text" placeholder="Sure Name">
+        <input type="email" placeholder="Email">
+        <input type="password" onfocus="focus()" id="updatePass" placeholder="Password">
+        <button id="btn1" onclick="update()">Update</button>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script src="../js/update.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

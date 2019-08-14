@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>What's App</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="shortcut icon" href="img/title1.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="topHeader">
+    <div class="detailWrapper">
+      <img src="./img/icon.png" width="10%" alt="icon" class="logo" />
+    </div>
+    <div class="dropdownWrapper">
+      <div class="profileImageWrapper" onclick="dropDown()">
+        <img src="./img/icon.png" class="profileImage" id="myProfile" />
+      </div>
+    </div>
+
+    <div class="dropdown" style="display: none" id="dropdown">
+      <div class="crosswrapper">
+        <button onclick="closeDropdowon()" class='closedropdown'>X</button>
+      </div>
+      <button onclick="addUser()" class="btn1">Add User</button>
+      <button onclick="updateProfile()" class="btn2">Profile</button>
+      <button onclick="signOut()" class="btn3">SignOut</button>
+    </div>
+  </div>
+
+  <div class="tabsContainer">
+    <div class="tabs" id="chatsTab" onclick="_handleTab('chatsTab')">
+      Chats
+    </div>
+    <div class="tabs" id="contactsTab" onclick="_handleTab('contactsTab')">
+      Contacts
+    </div>
+  </div>
+  <div class="animatedBorder" id="border"></div>
+  <div class="chatsDetailContainer" id="chatsDetail">
+
+  </div>
+  <div class="contactsDetailContainer" id="contactsDetail">
+
+  </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+<script src="js/index.js"></script>
+
+</html>
