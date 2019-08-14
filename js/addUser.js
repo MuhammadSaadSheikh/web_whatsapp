@@ -26,8 +26,7 @@ function addNumber() {
   document.getElementById("loaderNumber").style.display = "block";
   if (!phoneNumber) {
     alert("Enter Number");
-  }
-  else {
+  } else {
     db.collection("users")
       .where("phone", "==", phoneNumber)
       .get()
@@ -67,23 +66,24 @@ function letsChat(otherUserId) {
   var myId = localStorage.getItem("userId");
   document.getElementById("loader").style.display = "block";
   try {
+    //`users.${user.uid}`
     db.collection("chatRooms")
-      .where(otherUserId, "==", true)
-      .where(myId, "==", true)
+      .where(`users.${otherUserId}`, "==", true)
+      .where(`users.${myId}`, "==", true)
       .get()
       .then(res => {
         document.getElementById("loader").style.display = "none";
         if (res.size) {
           res.forEach(doc => {
             localStorage.setItem("chatRoomId", doc.id);
-            location.href= '../html/chat.html'
+            location.href = "../html/chat.html";
           });
         } else {
           db.collection("chatRooms")
             .add({
-              [otherUserId]: true,
-              [myId]: true,
-              createdAt: new Date().getTime()
+              users: { [otherUserId]: true, [myId]: true },
+              createdAt: new Date().getTime(),
+              lastMessage : "You have not started conversation yet!"
             })
             .then(res => {
               localStorage.setItem("chatRoomId", res.id);

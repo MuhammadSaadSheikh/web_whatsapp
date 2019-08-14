@@ -212,12 +212,58 @@ h2 {
 .chatsDetailContainer{
   width: 100%;
   height: 84vh;
-  background-color: red;
 }
 
 .contactsDetailContainer{
   width: 100%;
   height: 84vh;
-  background-color: blue;
   display: none;
+}
+
+.inboxWrapper{
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid green;
+  border-top: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.imageWrapper{
+  width: 50px;
+  height: 50px;
+  border: 1px solid green;
+  margin-left: 20px;
+  border-radius: 100px;
+}
+
+.image{
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+}
+
+.inboxDetails{
+  width: 90%;
+  height: 60px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start
+}
+
+.username{
+  color: green;
+  font-size: 1.5em;
+  margin: 0px 0px 0px 10px !important;
+}
+
+.lastMessage{
+  color: grey;
+  font-size: 1.0em;
+  margin: 0px 0px 0px 10px !important;
 }

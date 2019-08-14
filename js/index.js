@@ -84,3 +84,68 @@ function dropDown() {
 function closeDropdowon() {
   document.getElementById("dropdown").style.display = "none";
 }
+
+const chatsDetail = document.querySelector("#chatsDetail");
+const contactsDetail = document.querySelector("#contactsDetail");
+
+
+db.collection("chatRooms")
+  .where(`users.${userId}`, "==", true)
+  .onSnapshot(res => {
+    res.forEach(doc => {
+      let allIds = Object.keys(doc.data().users);
+      let otherUserId = "";
+      for (let i = 0; i < allIds.length; i++) {
+        if (userId != allIds[i]) {
+          otherUserId = allIds[i];
+          break;
+        }
+      }
+      let chatOptions = {
+        roomId :  doc.id,
+        otherUserId 
+      }
+      db.collection("users").doc(otherUserId).get().then(userData => {
+        let inboxWrapper = document.createElement("div");
+        inboxWrapper.addEventListener("click" , this.gotoChat.bind(null , chatOptions));
+        inboxWrapper.setAttribute("class" , "inboxWrapper");
+        inboxWrapper.setAttribute("id" , userData.id);
+        chatsDetail.appendChild(inboxWrapper);
+
+        let childWrapper = document.getElementById(userData.id);
+        let imageWrapper = document.createElement('div')
+        imageWrapper.setAttribute("class" , "imageWrapper")
+        imageWrapper.setAttribute('id' , 'imageWrapper' + userData.id)
+        childWrapper.appendChild(imageWrapper)
+        
+        let nestedChild = document.getElementById('imageWrapper' + userData.id)
+        let imgeTag = document.createElement('img')
+        imgeTag.setAttribute('class' , 'image')
+        imgeTag.setAttribute('src' , userData.data().avatar)
+        nestedChild.appendChild(imgeTag)
+
+        let inboxDetails = document.createElement('div')
+        inboxDetails.setAttribute('class' , 'inboxDetails')
+        inboxDetails.setAttribute('id' , 'inboxDetails' + userData.id)
+        childWrapper.appendChild(inboxDetails)
+
+        let inboxItems = document.getElementById('inboxDetails' + userData.id)
+        let userName = document.createElement('p')
+        userName.setAttribute('class' , 'username')
+        userName.innerHTML = userData.data().username
+        inboxItems.appendChild(userName)
+
+        let userLastMsg = document.createElement('p')
+        userLastMsg.setAttribute('class' , 'lastMessage')
+        userLastMsg.innerHTML =  doc.data().lastMessage
+        inboxItems.appendChild(userLastMsg)
+      })
+    });
+  });
+
+  function gotoChat(param){
+    localStorage.setItem("roomId" , param.roomId);
+    localStorage.setItem("otherUserId" , param.otherUserId);
+
+    location.href = "html/chat.html";
+  }

@@ -25,11 +25,11 @@ db.collection("users")
       doc.data().firstName + " " + doc.data().lastName;
   });
 
-  db.collection("users")
+db.collection("users")
   .doc(userId)
   .get()
   .then(doc => {
-    document.getElementById("myProfile").src = doc.data().avatar
+    document.getElementById("myProfile").src = doc.data().avatar;
   });
 
 db.collection("chatRooms")
@@ -109,8 +109,15 @@ function send() {
       .doc(timeStamp.toString())
       .set(chatObj)
       .then(function() {
-        document.getElementById("txtMessage").value = "";
-        mainContainer.scrollTop = mainContainer.scrollHeight;
+        db.collection("chatRooms")
+          .doc(chatRoom)
+          .update({
+            lastMessage: txtMessage
+          })
+          .then(lastRes => {
+            document.getElementById("txtMessage").value = "";
+            mainContainer.scrollTop = mainContainer.scrollHeight;
+          });
       });
   } else {
     alert("Can't be empty!");
