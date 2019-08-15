@@ -155,3 +155,7 @@ function closeDropdowon() {
 if (!otherUserId || !chatRoom || !userId) {
   location.href = "../html/signIn.html";
 }
+
+function goBack() {
+  window.history.back();
+}

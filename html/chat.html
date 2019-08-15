@@ -12,15 +12,23 @@
 
   <body>
     <div class="topHeader">
-      <div class="detailWrapper">
-        <img src="../img/icon.png" width="10%" alt="icon" class="logo" />
-        <h1 id="userName">loading...</h1>
+
+      <div class="backWrapper">
+          <img src="../img/back.png" class="backIcon" onclick="goBack()"/>
+          <div class="wrapperImage">
+              <img src="../img/icon.png" class="profileImage" id="myProfile" />
+          </div>
+          <h1 id="userName" style="margin-left: 10px; color: white">loading...</h1>
       </div>
-      <div class="dropdownWrapper">
+      <!-- <div class="detailWrapper">
+        <img src="../img/icon.png" class="profileImage" id="myProfile" />
+        <h1 id="userName">loading...</h1>
+      </div> -->
+      <!-- <div class="dropdownWrapper">
         <div class="profileImageWrapper" onclick="dropDown()">
           <img src="../img/icon.png" class="profileImage" id="myProfile" />
         </div>
-      </div>
+      </div> -->
       <div class="dropdown" style="display: none" id="dropdown">
         <div class="crosswrapper">
           <button onclick="closeDropdowon()" class="closedropdown">X</button>

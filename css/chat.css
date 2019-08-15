@@ -78,7 +78,6 @@
 }
 
 .myChatDetails{
-  /* background-color: blue; */
   border-radius: 20px;
   margin-left: 10px;
   margin-top: 10px;
@@ -88,4 +87,23 @@
   max-width: 250px;
   padding: 10px;
   word-break: break-all;
+}
+
+.backWrapper{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center
+}
+
+.backIcon{
+  width: 60px;
+  cursor: pointer;
+}
+
+.wrapperImage{
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
 }
