@@ -212,6 +212,8 @@ h2 {
 .chatsDetailContainer{
   width: 100%;
   height: 84vh;
+  display: flex;
+  flex-direction: column
 }
 
 .contactsDetailContainer{

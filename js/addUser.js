@@ -21,6 +21,8 @@ function changeInput(id, event) {
   }
 }
 
+const userId = localStorage.getItem("userId");
+
 function addNumber() {
   var phoneNumber = document.getElementById("addNumber").value;
   document.getElementById("loaderNumber").style.display = "block";
@@ -36,6 +38,7 @@ function addNumber() {
           document.getElementById("numberContanier").style.display = "none";
           document.getElementById("profileWrapper").style.display = "flex";
           res.forEach(doc => {
+            console.log(doc.id);
             document.getElementById("avatar").src = doc.data().avatar;
             document.getElementById("txtFullName").innerHTML =
               doc.data().firstName + " " + doc.data().lastName;
@@ -44,9 +47,13 @@ function addNumber() {
             ).innerHTML = doc.data().username;
             document.getElementById("txtEmail").innerHTML = doc.data().email;
             document.getElementById("txtNumber").innerHTML = doc.data().phone;
-            document
-              .getElementById("btnChat")
-              .addEventListener("click", letsChat.bind(null, doc.id));
+            if (doc.id == userId) {
+              document.getElementById("btnChat").style.display = "none";
+            } else {
+              document
+                .getElementById("btnChat")
+                .addEventListener("click", letsChat.bind(null, doc.id));
+            }
           });
         } else {
           alert("user not found!");
@@ -83,7 +90,7 @@ function letsChat(otherUserId) {
             .add({
               users: { [otherUserId]: true, [myId]: true },
               createdAt: new Date().getTime(),
-              lastMessage : "You have not started conversation yet!"
+              lastMessage: "You have not started conversation yet!"
             })
             .then(res => {
               localStorage.setItem("chatRoomId", res.id);
@@ -94,4 +101,8 @@ function letsChat(otherUserId) {
     console.log("code error", error);
     document.getElementById("loader").style.display = "none";
   }
+}
+
+function addNew() {
+  location.reload();
 }

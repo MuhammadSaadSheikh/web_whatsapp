@@ -32,14 +32,15 @@
         </div>
     </div>
     <div class="formDiv">
-        <h2>Profile Updata</h2>
-        <input type="file" name="" id="">
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
-        <input type="text" placeholder="Sure Name">
-        <input type="email" placeholder="Email">
-        <input type="password" onfocus="focus()" id="updatePass" placeholder="Password">
+        <h2>My Profile</h2>
+        <img src="../img/icon.png" id="profileImage" style="width: 100px"/>
+        <input type="file" name="" id="txtFileName">
+        <input type="text" placeholder="First Name" id="txtFirstName">
+        <input type="text" placeholder="Last Name" id="txLastName">
+        <input type="text" placeholder="User Name" id="txtUsername">
         <button id="btn1" onclick="update()">Update</button>
+        <button id="btn1" onclick="profilePicUpdate()">Upload Picture</button>
+
     </div>
 
 
@@ -47,7 +48,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
     <script src="../js/update.js"></script>
-    <script src="../js/index.js"></script>
+    <!-- <script src="../js/index.js"></script> -->
 </body>
 
 </html>

@@ -159,13 +159,6 @@ function gotoChat(param) {
   location.href = "html/chat.html";
 }
 
-var a = [
-  { "123213": true, "2143213": true, createdAt: "213238902183" },
-  { "123213": true, "2143213": true, createdAt: "2132389022183" },
-  { "123213": true, "2143213": true, createdAt: "2132389302183" },
-  { "123213": true, "2143213": true, createdAt: "2132389052183" }
-];
-
 var contactsWrapper = document.querySelector("#contactsDetail");
 
 db.collection("chatRooms")
@@ -184,7 +177,6 @@ db.collection("chatRooms")
         .doc(otherUserId)
         .get()
         .then(userData => {
-          console.log("TCL: userData", userData.id);
           let inboxWrapper = document.createElement("div");
           // inboxWrapper.addEventListener("click" , this.gotoChat.bind(null , chatOptions));
           inboxWrapper.setAttribute("class", "inboxWrapper");
