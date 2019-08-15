@@ -178,7 +178,7 @@ db.collection("chatRooms")
         .get()
         .then(userData => {
           let inboxWrapper = document.createElement("div");
-          // inboxWrapper.addEventListener("click" , this.gotoChat.bind(null , chatOptions));
+          inboxWrapper.addEventListener("click" , this.showPopUp.bind(null , userData.data()));
           inboxWrapper.setAttribute("class", "inboxWrapper");
           inboxWrapper.setAttribute("id", userData.id + "1");
           contactsWrapper.appendChild(inboxWrapper);
@@ -212,3 +212,18 @@ db.collection("chatRooms")
         });
     });
   });
+
+  function hidePopUp(){
+    document.querySelector("#popupVeiw").style.display = 'none'
+  }
+
+  function showPopUp(param){
+    document.querySelector("#popupVeiw").style.display = 'flex'    
+    console.log(param)
+    document.querySelector("#popUpPic").src = param.avatar
+    document.querySelector("#firstName").innerHTML = param.firstName
+    document.querySelector("#lastName").innerHTML = param.lastName
+    document.querySelector("#userName").innerHTML = param.username
+    document.querySelector("#email").innerHTML = param.email
+    document.querySelector("#phone").innerHTML = param.phone
+  }

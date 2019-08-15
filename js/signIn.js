@@ -25,7 +25,7 @@ function signIn() {
           localStorage.setItem("userId", res.user.uid)
           document.getElementById('userEmail').value = ''
           document.getElementById('createPassword').value = ''
-          window.location.href = "../index.html"
+          window.location.replace("../index.html")
           document.getElementById("loader").style.display = "none";
         })
         .catch(err => {

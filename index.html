@@ -12,6 +12,22 @@
 </head>
 
 <body>
+    <div class="popUp" id= "popupVeiw">
+      <div class="popUpDetails">
+      <div class="crossWrapper">
+        <p class="cross" onclick="hidePopUp()"> X</p>
+      </div>
+      <div class = "userDetails">
+          <img src="img/icon.png" alt="" width="50px" height="50px" id="popUpPic">
+          <p id="firstName" class="details"></p>
+          <p id="lastName" class="details"></p>
+          <p id="userName" class="details"></p>
+          <p id="email" class="details"></p>
+          <p id="phone" class="details"></p>
+      </div>
+      </div>
+    </div>
+
   <div class="topHeader">
     <div class="detailWrapper">
       <img src="./img/icon.png" width="10%" alt="icon" class="logo" />
@@ -47,8 +63,9 @@
   <div class="chatsDetailContainer" id="chatsDetail">
   </div>
   <div class="contactsDetailContainer" id="contactsDetail">
-  
   </div>
+
+  
 </body>
 <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
